@@ -1,0 +1,59 @@
+:root {
+  /* Base */
+  --background: #121212;
+  --foreground: #f8fafc;
+
+  /* Card */
+  --card: #1e1e1f;
+  --card-foreground: #f8fafc;
+
+  /* Popover */
+  --popover: #1e1e1f;
+  --popover-foreground: #f8fafc;
+
+  /* Brand */
+  --primary: #8b5cf6;
+  --primary-foreground: #ffffff;
+
+  --secondary: #2a1f3d;
+  --secondary-foreground: #c4b5fd;
+
+  /* Muted */
+  --muted: #181819;
+  --muted-foreground: #94a3b8;
+
+  /* Accent */
+  --accent: #2a1f3d;
+  --accent-foreground: #c4b5fd;
+
+  /* Status */
+  --destructive: #f87171;
+
+  /* Borders / Inputs */
+  --border: #2d2d2f;
+  --input: #2d2d2f;
+  --ring: #8b5cf6;
+
+  /* Charts */
+  --chart-1: #8b5cf6;
+  --chart-2: #a78bfa;
+  --chart-3: #c4b5fd;
+  --chart-4: #7c3aed;
+  --chart-5: #6d28d9;
+
+  /* Sidebar */
+  --sidebar: #1e1e1f;
+  --sidebar-foreground: #f8fafc;
+
+  --sidebar-primary: #8b5cf6;
+  --sidebar-primary-foreground: #ffffff;
+
+  --sidebar-accent: #2a1f3d;
+  --sidebar-accent-foreground: #c4b5fd;
+
+  --sidebar-border: #2d2d2f;
+  --sidebar-ring: #8b5cf6;
+
+  /* Radius */
+  --radius: 0.625rem;
+}
