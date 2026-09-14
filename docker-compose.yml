@@ -43,7 +43,7 @@ services:
           "--no-verbose",
           "--tries=1",
           "--spider",
-           "http://127.0.0.1:7700/health"
+          "http://127.0.0.1:7700/health"
         ]
       interval: 10s
       timeout: 5s
@@ -54,8 +54,8 @@ services:
       context: ./client
       dockerfile: Dockerfile
       args:
-        NEXT_PUBLIC_SITE_URL: http://localhost:3000
-        NEXT_PUBLIC_API_URL: http://localhost:5000/api
+        NEXT_PUBLIC_SITE_URL: https://aivora.directory
+        NEXT_PUBLIC_API_URL: https://aivora.directory
 
     container_name: aivora-frontend
 
@@ -64,6 +64,7 @@ services:
     environment:
       NODE_ENV: production
       BACKEND_INTERNAL_URL: http://backend:5000/api
+      BACKEND_INTERNAL_SECRET: ${BACKEND_INTERNAL_SECRET}
 
     depends_on:
       - backend
