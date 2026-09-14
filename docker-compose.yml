@@ -55,7 +55,7 @@ services:
       dockerfile: Dockerfile
       args:
         NEXT_PUBLIC_SITE_URL: https://aivora.directory
-        NEXT_PUBLIC_API_URL: https://aivora.directory
+        NEXT_PUBLIC_API_URL: https://aivora.directory/api
 
     container_name: aivora-frontend
 
