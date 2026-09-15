@@ -57,7 +57,7 @@ export default function ContactForm() {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
+        `${process.env.NEXT_PUBLIC_API_URL}/contact`,
         {
           method: "POST",
           headers: {
@@ -208,7 +208,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded-xl bg-primary px-6 py-3.5 font-semibold text-primary-foreground transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-xl bg-primary px-6 py-3.5 cursor-pointer font-semibold text-primary-foreground transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {loading
           ? "جاري إرسال الرسالة..."

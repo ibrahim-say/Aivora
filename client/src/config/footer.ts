@@ -32,6 +32,10 @@ export const footerLinks = {
       },
       {
         name: "LinkedIn",
+        href: "https://www.linkedin.com/in/ibrahim-sayed-9b3768408/",
+      },
+      {
+        name: "Instagram",
         href: "#",
       },
       {
