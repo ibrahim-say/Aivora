@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 import Header from "@/components/layout/Header";
@@ -41,6 +42,12 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3967493502787954"
+          crossOrigin="anonymous"
+        />
+
         <ReactQueryProvider>
           <Header />
 
