@@ -10,7 +10,7 @@ type Props = {
 
 export default function Hero({
   title = "الذكاء الاصطناعي",
-  description = "أكثر من 15 آلاف أدوات الذكاء الاصطناعي في مكان واحد. ابحث، قارن، واكتشف الأداة المناسبة لعملك أو دراستك.",
+  description = "ابحث، قارن، واكتشف أدوات الذكاء الاصطناعي المناسبة لعملك ودراستك ومشاريعك.",
   onSearch,
   initialSearch = "",
 }: Props) {
@@ -59,7 +59,7 @@ export default function Hero({
               lg:text-6xl
             "
           >
-            اكتشف أفضل أدوات
+            اكتشف جميع أدوات
 
             <span className="block text-primary">
               {title}

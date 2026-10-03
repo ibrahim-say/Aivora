@@ -91,16 +91,28 @@ export default function Footer() {
         </div>
 
 
-        {/* Copyright */}
-        <div className="border-t border-border py-7 text-center text-base text-muted-foreground">
-          <p dir="rtl">
-            جميع الحقوق محفوظة لـ{" "}
-            <span dir="ltr" className="inline-block">
-              Aivora © {new Date().getFullYear()}
-            </span>
-          </p>
-        </div>
+       {/* Copyright */}
+       <div className="border-t border-border py-6 text-center text-sm text-muted-foreground">
+  <p dir="rtl" className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+    <span>
+      © {new Date().getFullYear()} Aivora — جميع الحقوق محفوظة
+    </span>
 
+    <span className="text-border">•</span>
+
+    <span>
+      تم التطوير بواسطة{" "}
+      <Link
+        href="https://personal-portfolio-1rkocp6vg-ibrahim-sayeds-projects.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-semibold text-foreground transition-colors hover:text-primary"
+      >
+        Ibrahim Sayed
+      </Link>
+    </span>
+  </p>
+</div>
       </Container>
     </footer>
   );

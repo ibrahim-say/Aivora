@@ -43,7 +43,7 @@ function ContentRenderer({
   }
 
   return (
-    <div className="space-y-7 text-foreground">
+    <div className="space-y-6 sm:space-y-7 text-foreground">
       {content.map((block, index) => {
         if (!block || !block.tag) {
           return null;
@@ -63,7 +63,7 @@ function ContentRenderer({
           return (
             <h2
               key={key}
-              className="mt-10 text-4xl font-extrabold leading-tight text-foreground"
+              className="mt-8 text-2xl font-extrabold leading-tight text-foreground sm:mt-10 sm:text-3xl lg:text-4xl"
             >
               {block.text}
             </h2>
@@ -78,7 +78,7 @@ function ContentRenderer({
           return (
             <h2
               key={key}
-              className="mt-10 border-b border-border pb-3 text-3xl font-bold leading-tight text-foreground"
+              className="mt-8 border-b border-border pb-3 text-2xl font-bold leading-tight text-foreground sm:mt-10 sm:text-3xl"
             >
               {block.text}
             </h2>
@@ -93,7 +93,7 @@ function ContentRenderer({
           return (
             <h3
               key={key}
-              className="mt-8 text-2xl font-bold leading-relaxed text-foreground"
+              className="mt-7 text-xl font-bold leading-relaxed text-foreground sm:mt-8 sm:text-2xl"
             >
               {block.text}
             </h3>
@@ -108,7 +108,7 @@ function ContentRenderer({
           return (
             <h4
               key={key}
-              className="mt-7 text-xl font-bold leading-relaxed text-foreground"
+              className="mt-6 text-lg font-bold leading-relaxed text-foreground sm:mt-7 sm:text-xl"
             >
               {block.text}
             </h4>
@@ -123,7 +123,7 @@ function ContentRenderer({
           return (
             <h5
               key={key}
-              className="mt-6 text-lg font-bold leading-relaxed text-foreground"
+              className="mt-5 text-base font-bold leading-relaxed text-foreground sm:mt-6 sm:text-lg"
             >
               {block.text}
             </h5>
@@ -138,7 +138,7 @@ function ContentRenderer({
           return (
             <p
               key={key}
-              className="text-lg leading-8 text-muted-foreground"
+              className="text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
             >
               {block.text}
             </p>
@@ -160,13 +160,13 @@ function ContentRenderer({
           return (
             <ul
               key={key}
-              className="space-y-3 rounded-2xl border border-border bg-card p-5 pr-10"
+              className="space-y-2.5 rounded-2xl border border-border bg-card p-4 pr-8 sm:space-y-3 sm:p-5 sm:pr-10"
             >
               {block.items.map(
                 (item, itemIndex) => (
                   <li
                     key={`${key}-${itemIndex}`}
-                    className="list-disc text-lg leading-7 text-muted-foreground"
+                    className="list-disc text-base leading-7 text-muted-foreground sm:text-lg"
                   >
                     {item}
                   </li>
@@ -191,13 +191,13 @@ function ContentRenderer({
           return (
             <ol
               key={key}
-              className="space-y-3 rounded-2xl border border-border bg-card p-5 pr-10"
+              className="space-y-2.5 rounded-2xl border border-border bg-card p-4 pr-8 sm:space-y-3 sm:p-5 sm:pr-10"
             >
               {block.items.map(
                 (item, itemIndex) => (
                   <li
                     key={`${key}-${itemIndex}`}
-                    className="list-decimal text-lg leading-7 text-muted-foreground"
+                    className="list-decimal text-base leading-7 text-muted-foreground sm:text-lg"
                   >
                     {item}
                   </li>
@@ -215,7 +215,7 @@ function ContentRenderer({
           return (
             <blockquote
               key={key}
-              className="rounded-2xl border-r-4 border-primary bg-secondary px-6 py-5 text-[16px] font-medium leading-8 text-muted-foreground"
+              className="rounded-2xl border-r-4 border-primary bg-secondary px-4 py-4 text-sm font-medium leading-7 text-muted-foreground sm:px-6 sm:py-5 sm:text-base sm:leading-8"
             >
               {block.text}
             </blockquote>
@@ -231,7 +231,7 @@ function ContentRenderer({
             <pre
               key={key}
               dir="ltr"
-              className="overflow-x-auto rounded-2xl bg-card p-5 text-sm leading-7 text-card-foreground"
+              className="overflow-x-auto rounded-2xl bg-card p-4 text-xs leading-6 text-card-foreground sm:p-5 sm:text-sm sm:leading-7"
             >
               <code>
                 {block.text}
@@ -265,11 +265,9 @@ function ContentRenderer({
           return (
             <div
               key={key}
-              className="my-8 overflow-x-auto rounded-2xl border border-border"
+              className="my-6 overflow-x-auto rounded-2xl border border-border sm:my-8"
             >
               <table className="w-full min-w-[600px] border-collapse text-right">
-                {/* Headers */}
-
                 {headers.length > 0 && (
                   <thead className="bg-secondary">
                     <tr>
@@ -280,7 +278,7 @@ function ContentRenderer({
                         ) => (
                           <th
                             key={`${key}-header-${headerIndex}`}
-                            className="border-b border-border px-5 py-4 text-xl font-bold text-primary"
+                            className="border-b border-border px-4 py-3 text-base font-bold text-primary sm:px-5 sm:py-4 sm:text-xl"
                           >
                             {header}
                           </th>
@@ -289,8 +287,6 @@ function ContentRenderer({
                     </tr>
                   </thead>
                 )}
-
-                {/* Rows */}
 
                 {rows.length > 0 && (
                   <tbody>
@@ -314,7 +310,7 @@ function ContentRenderer({
                               ) => (
                                 <td
                                   key={`${key}-${rowIndex}-${cellIndex}`}
-                                  className="px-5 py-4 text-lg leading-7 text-muted-foreground"
+                                  className="px-4 py-3 text-sm leading-6 text-muted-foreground sm:px-5 sm:py-4 sm:text-lg sm:leading-7"
                                 >
                                   {cell}
                                 </td>
@@ -339,7 +335,7 @@ function ContentRenderer({
           return (
             <p
               key={key}
-              className="text-lg leading-8 text-muted-foreground"
+              className="text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8"
             >
               {block.text}
             </p>

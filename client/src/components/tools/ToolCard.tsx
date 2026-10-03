@@ -56,12 +56,12 @@ export default function ToolCard({
       </div>
 
       {/* Content */}
-      <div className="flex flex-1 flex-col p-5">
+      <div className="flex flex-1 flex-col p-4 sm:p-5">
 
         {/* Name + Website */}
-        <div className="flex items-center justify-between gap-3">
+        <div className="flex items-center justify-between gap-2 sm:gap-3">
 
-          <h3 className="text-2xl font-bold">
+          <h3 className="min-w-0 text-xl font-bold leading-tight sm:text-2xl">
             {tool.name}
           </h3>
 
@@ -69,32 +69,36 @@ export default function ToolCard({
             href={tool.websiteUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:text-primary"
+            aria-label={`زيارة موقع ${tool.name}`}
+            className="shrink-0 transition hover:text-primary"
           >
-            <ExternalLink size={25} />
+            <ExternalLink
+              size={21}
+              className="sm:h-6 sm:w-6"
+            />
           </a>
 
         </div>
 
         {/* Description */}
-        <p className="mt-4 leading-7 text-xl text-muted-foreground">
+        <p className="mt-3 line-clamp-3 text-base leading-7 text-muted-foreground sm:mt-4 sm:text-lg sm:leading-7">
           {tool.description}
         </p>
 
         {/* Subcategories */}
-        <div className="mt-5 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2 sm:mt-5">
           {visibleSubCategories.slice(0, 2).map((subCategory) => (
             <Link
               key={subCategory._id}
               href={`/subcategory/${subCategory.slug}`}
-              className="inline-flex rounded-full bg-secondary px-3 py-1 text-sm font-medium text-secondary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+              className="inline-flex rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground transition-colors hover:bg-accent hover:text-accent-foreground sm:text-sm"
             >
               {subCategory.name}
             </Link>
           ))}
 
           {visibleSubCategories.length > 2 && (
-            <span className="inline-flex rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">
+            <span className="inline-flex rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground sm:text-sm">
               +{visibleSubCategories.length - 2}
             </span>
           )}
@@ -103,22 +107,22 @@ export default function ToolCard({
             !currentSubCategoryId &&
             tool.subCategories &&
             tool.subCategories.length > 2 && (
-              <span className="inline-flex rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">
+              <span className="inline-flex rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground sm:text-sm">
                 +{tool.subCategories.length - 2}
               </span>
             )}
         </div>
 
         {/* Footer */}
-        <div className="mt-auto flex items-center justify-between pt-6">
+        <div className="mt-auto flex items-center justify-between gap-3 pt-5 sm:pt-6">
 
-          <span className="rounded-lg bg-accent px-3 py-2 text-lg font-medium text-accent-foreground">
+          <span className="rounded-lg bg-accent px-3 py-1.5 text-sm font-medium text-accent-foreground sm:px-3 sm:py-2 sm:text-base">
             {tool.pricing}
           </span>
 
           <Link
             href={`/tool/${tool.slug}`}
-            className="rounded-lg bg-primary px-5 py-2 text-lg font-semibold text-primary-foreground transition hover:opacity-90"
+            className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:opacity-90 sm:px-5 sm:text-base"
           >
             التفاصيل
           </Link>

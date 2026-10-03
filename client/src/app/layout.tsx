@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+import SocialBar from "@/components/ads/SocialBar";
+import BannerAd from "@/components/ads/BannerAd";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -53,7 +55,22 @@ export default function RootLayout({
 
           {children}
 
-          <Footer />
+<SocialBar />
+
+{/* Adsterra Bottom Banner */}
+<div className="w-full flex justify-center">
+  <div className="hidden md:block">
+    <BannerAd size="728x90" />
+  </div>
+
+  <div className="block md:hidden">
+    <BannerAd size="320x50" />
+  </div>
+</div>
+
+<Footer />
+          
+   
         </ReactQueryProvider>
       </body>
     </html>

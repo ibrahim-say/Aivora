@@ -45,9 +45,10 @@ export default function HomeContent({
         <>
           <CategoriesPreview categories={categories} />
 
+          <MostViewedTools />
+
           <LatestTools />
 
-          <MostViewedTools />
         </>
       )}
 

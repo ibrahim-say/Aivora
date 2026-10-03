@@ -1,8 +1,10 @@
+
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { cache } from "react";
 
 import ToolDetails from "@/components/tools/ToolDetails";
+import NativeAd from "@/components/ads/NativeAd";
 import { getToolBySlug } from "@/services/tool.service";
 
 export const dynamic = "force-dynamic";
@@ -156,6 +158,11 @@ export default async function ToolPage({
         tool={tool}
         similarTools={similarTools}
       />
+
+      {/* Adsterra Native Banner */}
+      {/* <NativeAd /> */}
+
     </>
   );
 }
+
